@@ -115,9 +115,11 @@ function Login() {
 					</form>
 				</Form>
 				<div className="flex justify-center w-full mb-12">
-					<Button variant={"secondary"} className="py-6 px-8">
-						<Link to={"/auth/signup"}>Create new account</Link>
-					</Button>
+					<Link to={"/auth/signup"}>
+						<Button variant={"secondary"} className="py-6 px-8">
+							Create new account
+						</Button>
+					</Link>
 				</div>
 			</div>
 
