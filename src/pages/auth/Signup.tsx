@@ -1,3 +1,4 @@
+import CompletedStep from "@/components/Signup/CompletedStep";
 import SignupStep from "@/components/Signup/SignupStep";
 import UserInfoForm from "@/components/Signup/UserInfoForm";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -5,7 +6,7 @@ import type { SignupData } from "@/lib/types/signupFormType";
 import { useState } from "react";
 
 function Signup() {
-	const [currentStep, setCurrentStep] = useState(0);
+	const [currentStep, setCurrentStep] = useState(4);
 	const [formData, setFormData] = useState<Partial<SignupData>>({
 		idType: "ID Card",
 		idNumber: "",
@@ -42,7 +43,7 @@ function Signup() {
 						case 3:
 							return <h1>Verification Form</h1>;
 						case 4:
-							return <h1>Completed</h1>;
+							return <CompletedStep />
 						default:
 							return (
 								<UserInfoForm initialData={formData} onNext={handleNext} />
