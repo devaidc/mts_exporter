@@ -49,9 +49,9 @@ function SignupStep(props: Prop) {
 
 						{index < steps.length - 1 && (
 							<BreadcrumbSeparator
-								className={
+								className={`[&>svg]:size-5 ${
 									index < props.currentStep ? "text-primary" : "text-gray-400"
-								}
+								}`}
 							/>
 						)}
 					</React.Fragment>
