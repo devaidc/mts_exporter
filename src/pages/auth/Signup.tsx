@@ -3,7 +3,7 @@ import CompletedStep from "@/components/Signup/CompletedStep";
 import SignupStep from "@/components/Signup/SignupStep";
 import UserInfoForm from "@/components/Signup/UserInfoForm";
 import UserTypeForm from "@/components/Signup/UserTypeForm";
-import VerifycationForm from "@/components/Signup/VerifycationForm";
+import VerificationForm from "@/components/Signup/VerificationForm";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import type { SignupData } from "@/lib/types/signupFormType";
 import { useState } from "react";
@@ -48,7 +48,7 @@ function Signup() {
 								<BusinessIdForm initialData={formData} onNext={handleNext} />
 							);
 						case 3:
-							return <VerifycationForm initialData={formData} onNext={handleNext} />;
+							return <VerificationForm initialData={formData} onNext={handleNext} />;
 						case 4:
 							return <CompletedStep />;
 						default:

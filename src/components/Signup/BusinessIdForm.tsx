@@ -18,7 +18,7 @@ function BusinessIdForm(props: StepProps) {
 	const form = useForm<businessIdFormValues>({
 		resolver: zodResolver(businessIdSchema),
 		defaultValues: {
-			businessID: props.initialData.idNumber || "",
+			businessID: props.initialData.businessID || "",
 		},
 	});
 
@@ -42,7 +42,7 @@ function BusinessIdForm(props: StepProps) {
 								<FormLabel>Business ID / Tin</FormLabel>
 								<FormControl>
 									<div className="relative">
-                                        <Search className="absolute left-2 text-primary top-1/2 -translate-y-1/2" />
+										<Search className="absolute left-2 text-primary top-1/2 -translate-y-1/2" />
 										<Input
 											className="h-12 pl-10"
 											placeholder="Search code"

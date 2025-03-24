@@ -26,7 +26,7 @@ const userTypeFormDetails = [
 	},
 	{
 		id: "mineral-trader",
-		label: "Mine Trader",
+		label: "Mineral Trader",
 		icon: User,
 		description:
 			"For businesses that buy and sell minerals without mining, including mineral brokers and wholesalers",

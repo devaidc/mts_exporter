@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import CancelSignButton from "./CancelSignButton";
 import type { StepProps } from "@/lib/types/signupFormType";
 
-function VerifycationForm(props: StepProps) {
+function VerificationForm(props: StepProps) {
 	const handleSubmit = () => {
 		props.onNext({});
 	};
@@ -55,4 +55,4 @@ function VerifycationForm(props: StepProps) {
 	);
 }
 
-export default VerifycationForm;
+export default VerificationForm;
