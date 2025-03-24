@@ -75,22 +75,25 @@ function UserInfoForm(props: StepProps) {
 										defaultValue={field.value}
 										className="flex gap-4"
 									>
-										<div className="flex items-center space-x-2">
+										<FormLabel
+											htmlFor="id-card"
+											className="flex items-center cursor-pointer"
+										>
 											<RadioGroupItem
 												value="ID Card"
 												id="id-card"
 												className="ring-1 ring-gray-700 [&>span>svg]:fill-secondary"
 											/>
-											<FormLabel htmlFor="id-card">ID Card</FormLabel>
-										</div>
-										<div className="flex items-center space-x-2">
+											ID Card
+										</FormLabel>
+										<FormLabel htmlFor="passport" className="flex items-center cursor-pointer">
 											<RadioGroupItem
 												value="Passport"
 												id="passport"
 												className="ring-1 ring-gray-700 [&>span>svg]:fill-secondary"
 											/>
-											<FormLabel htmlFor="passport">Passport</FormLabel>
-										</div>
+											Passport
+										</FormLabel>
 									</RadioGroup>
 								</FormControl>
 								<FormMessage />
@@ -270,7 +273,7 @@ function UserInfoForm(props: StepProps) {
 					{/* Action Buttons */}
 					<div className="flex justify-between pt-4 space-x-6">
 						<CancelSignButton />
-						<Button type="submit" className="flex-3/4">
+						<Button type="submit" className="flex-3/4 h-12">
 							Next
 						</Button>
 					</div>
