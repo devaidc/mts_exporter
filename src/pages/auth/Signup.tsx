@@ -9,7 +9,7 @@ import type { SignupData } from "@/lib/types/signupFormType";
 import { useState } from "react";
 
 function Signup() {
-	const [currentStep, setCurrentStep] = useState(3);
+	const [currentStep, setCurrentStep] = useState(0);
 	const [formData, setFormData] = useState<Partial<SignupData>>({
 		idType: "ID Card",
 		idNumber: "",
@@ -48,7 +48,7 @@ function Signup() {
 								<BusinessIdForm initialData={formData} onNext={handleNext} />
 							);
 						case 3:
-							return <VerifycationForm />;
+							return <VerifycationForm initialData={formData} onNext={handleNext} />;
 						case 4:
 							return <CompletedStep />;
 						default:
