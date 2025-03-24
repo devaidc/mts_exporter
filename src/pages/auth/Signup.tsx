@@ -1,12 +1,13 @@
 import CompletedStep from "@/components/Signup/CompletedStep";
 import SignupStep from "@/components/Signup/SignupStep";
 import UserInfoForm from "@/components/Signup/UserInfoForm";
+import UserTypeForm from "@/components/Signup/UserTypeForm";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import type { SignupData } from "@/lib/types/signupFormType";
 import { useState } from "react";
 
 function Signup() {
-	const [currentStep, setCurrentStep] = useState(4);
+	const [currentStep, setCurrentStep] = useState(1);
 	const [formData, setFormData] = useState<Partial<SignupData>>({
 		idType: "ID Card",
 		idNumber: "",
@@ -37,7 +38,7 @@ function Signup() {
 								<UserInfoForm initialData={formData} onNext={handleNext} />
 							);
 						case 1:
-							return <h1>User Type Form</h1>;
+							return <UserTypeForm initialData={formData} onNext={handleNext} />
 						case 2:
 							return <h1>Business Id Form</h1>;
 						case 3:
