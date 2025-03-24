@@ -79,7 +79,7 @@ function UserInfoForm(props: StepProps) {
 											<RadioGroupItem
 												value="ID Card"
 												id="id-card"
-												className="ring-1 ring-gray-700"
+												className="ring-1 ring-gray-700 [&>span>svg]:fill-secondary"
 											/>
 											<FormLabel htmlFor="id-card">ID Card</FormLabel>
 										</div>
@@ -87,7 +87,7 @@ function UserInfoForm(props: StepProps) {
 											<RadioGroupItem
 												value="Passport"
 												id="passport"
-												className="ring-1 ring-gray-700"
+												className="ring-1 ring-gray-700 [&>span>svg]:fill-secondary"
 											/>
 											<FormLabel htmlFor="passport">Passport</FormLabel>
 										</div>
