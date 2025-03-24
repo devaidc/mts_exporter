@@ -19,7 +19,7 @@ function CancelSignButton() {
 				<Button
 					type="button"
 					variant="outline"
-					className="text-destructive hover:text-none flex-2/5"
+					className="text-destructive hover:text-none px-12 h-12"
 				>
 					Cancel
 				</Button>
