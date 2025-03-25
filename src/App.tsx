@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import AuthLayout from "./layouts/AuthLayout";
+import Notfound from "./pages/Notfound";
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 					<Route path="login" element={<Login />} />
 					<Route path="signup" element={<Signup />} />
 				</Route>
+				<Route path="*" element={<Notfound />} />
 			</Routes>
 		</>
 	);
