@@ -38,6 +38,7 @@ type UserInfoFormValues = z.infer<typeof userInfoSchema>;
 
 function UserInfoForm(props: StepProps) {
 	const [showPassword, setShowPassword] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const form = useForm<UserInfoFormValues>({
 		resolver: zodResolver(userInfoSchema),
@@ -54,7 +55,13 @@ function UserInfoForm(props: StepProps) {
 	});
 
 	const onSubmit = (values: UserInfoFormValues) => {
-		props.onNext(values);
+		setIsSubmitting(true);
+
+		//? Call API to send OTP
+		setTimeout(() => {
+			setIsSubmitting(false);
+			props.onNext(values);
+		}, 1000);
 	};
 
 	return (
@@ -86,7 +93,10 @@ function UserInfoForm(props: StepProps) {
 											/>
 											ID Card
 										</FormLabel>
-										<FormLabel htmlFor="passport" className="flex items-center cursor-pointer">
+										<FormLabel
+											htmlFor="passport"
+											className="flex items-center cursor-pointer"
+										>
 											<RadioGroupItem
 												value="Passport"
 												id="passport"
@@ -273,8 +283,12 @@ function UserInfoForm(props: StepProps) {
 					{/* Action Buttons */}
 					<div className="flex justify-between pt-4 space-x-6">
 						<CancelSignButton />
-						<Button type="submit" className="flex-3/4 h-12">
-							Next
+						<Button
+							type="submit"
+							className="flex-3/4 h-12"
+							disabled={isSubmitting}
+						>
+							{isSubmitting ? "Sending verification code..." : "Next"}
 						</Button>
 					</div>
 				</form>
